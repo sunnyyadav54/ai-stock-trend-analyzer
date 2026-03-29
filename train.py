@@ -25,15 +25,12 @@ stocks = {
     "Intel": "INTC",
     "AMD": "AMD",
 
-    # Indian
     "Infosys": "INFY.NS",
     "HDFC Bank": "HDFCBANK.NS",
 
-    # Crypto (optional)
     "Bitcoin": "BTC-USD",
     "Ethereum": "ETH-USD",
 
-    # Index (very impressive)
     "S&P 500": "^GSPC",
     "Nifty 50": "^NSEI"
 }
@@ -51,7 +48,7 @@ for name, ticker in stocks.items():
 
     data = yf.download(ticker, start="2015-01-01", end="2024-01-01")
 
-    # Safety check
+    # check about data
     if data.empty:
         print(f"Skipping {ticker} (no data found)")
         continue
@@ -63,7 +60,6 @@ for name, ticker in stocks.items():
 
     X, y = create_sequences(scaled_data)
 
-    # Another safety check
     if len(X) == 0:
         print(f"Skipping {ticker} (not enough data)")
         continue
