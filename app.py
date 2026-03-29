@@ -20,14 +20,12 @@ stocks = {
     "Reliance": "RELIANCE.NS",
     "TCS": "TCS.NS",
 
-    "Gold": "GC=F",          # Gold Futures
+    "Gold": "GC=F",
     "DDR5 RAM (Micron)": "MU", 
     "Meta": "META",
     "Netflix": "NFLX",
     "Intel": "INTC",
     "AMD": "AMD",
-
-    # Indian
     "Infosys": "INFY.NS",
     "HDFC Bank": "HDFCBANK.NS",
 
@@ -71,17 +69,14 @@ def predict_stock():
         X = create_sequences(scaled_data)
         predictions = model.predict(X)
 
-        # Step 2: inverse scaling fix
         dummy = np.zeros((predictions.shape[0], 5))
-        dummy[:, 3] = predictions[:, 0]   # Close column
+        dummy[:, 3] = predictions[:, 0] 
 
         predictions = scaler.inverse_transform(dummy)[:, 3].reshape(-1,1)
 
         real = data[['Close']].values[60:]
-        # MSE
         mse = mean_squared_error(real, predictions)
 
-# RMSE
         rmse = np.sqrt(mse)
 
 # Accuracy (custom %)
