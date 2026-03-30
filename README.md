@@ -78,6 +78,7 @@ python train.py
 ```
 python app.py
 ```
+<img width="1920" height="1080" alt="Screenshot (207)" src="https://github.com/user-attachments/assets/66edcb18-6151-4b5b-8b15-03b3db12db20" />
 
 ---
 
@@ -95,6 +96,7 @@ python app.py
 
 * **RMSE (Root Mean Squared Error)**
 * **Accuracy (%)** based on MAPE
+<img width="1845" height="905" alt="Screenshot 2026-03-29 160929" src="https://github.com/user-attachments/assets/b233ca43-20d8-42d1-aa82-7793d1ec58aa" />
 
 ---
 
